@@ -9,9 +9,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .authorizeRequests()
                 .antMatchers("/admin/**")                             .hasAuthority(Roles.ADMIN.name())
-                .antMatchers("/**/reports/**")                        .hasAuthority(Roles.ADMIN.name())
-                .antMatchers("/request/quickSearch/**")               .hasAuthority(Roles.ADMIN.name())
-                .antMatchers("/**/assigned/approver/**")              .hasAuthority(Roles.ADMIN.name())
                 .antMatchers("/newEmployeeRequest/**")                .hasAnyAuthority(Roles.INITIATOR.name())
                 .antMatchers("/workFromHome/**")                      .hasAuthority(Roles.WORK_FROM_HOME.name())
                 .antMatchers("/maintenance/admin/**")                 .hasAuthority(Roles.MAINTAINANCE_ADMIN.name())
