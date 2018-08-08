@@ -9,7 +9,7 @@
 	<packaging>jar</packaging>
 
 	<name>scleancode</name>
-	<description>Demo project for Spring Boot</description>
+	<description>Secure Clean Code project</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
