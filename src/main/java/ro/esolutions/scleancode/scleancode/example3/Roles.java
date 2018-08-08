@@ -1,0 +1,21 @@
+package ro.esolutions.scleancode.scleancode.example3;
+
+public enum Roles {
+    ADMIN,
+    MANAGER,
+    DEPARTMENT_MANAGER,
+    EXTERNAL_MANAGER,
+    OPERATION_MANAGER,
+    APPLICATION_MANAGER,
+    INCIDENT_MANAGER,
+    HOME_USER,
+    INITIATOR,
+    MAINTAINANCE_ADMIN,
+    MAINTAINANCE_MANAGER,
+    MAINTAINANCE_USER,
+    PRICE_ADMIN,
+    PRICE_USER,
+    PRICE_USER_PV,
+    WORK_FROM_HOME,
+    CRM_MEMBER
+}
