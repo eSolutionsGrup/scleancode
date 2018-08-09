@@ -1,4 +1,4 @@
-package ro.esolutions.scleancode.scleancode.exercise1.db;
+package ro.esolutions.scleancode.scleancode.ex.db;
 
 public class Account {
     private String firstName;

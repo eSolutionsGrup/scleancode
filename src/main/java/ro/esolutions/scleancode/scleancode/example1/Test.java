@@ -4,105 +4,106 @@ import java.util.ArrayList;
 
 public class Test {
     public static void main(String[] args) {
-        String GivenWord="2jjjj79dcdcdc9";
-        ArrayList<String> Words = FindNonDigitSequenceOfChar ( GivenWord,1 );
+        String givenWord = "2jjjj79dcdcdc9";
+        ArrayList<String> words = findNonDigitSequenceOfChar(givenWord, 1);
 
-        if(Words!=null) {
-            for(String Word :Words) {
-                System.out.println(Word);
-            }
+
+        for (String Word : words) {
+            System.out.println(Word);
         }
-
     }
-    private static ArrayList<String> FindNonDigitSequenceOfChar(String givenWord, int MinimumSize ){
 
+    private static ArrayList<String> findNonDigitSequenceOfChar(String givenWord, int minimumSize) {
         assert (givenWord != null) : "Given Word is null";
         assert (givenWord.length() != 0) : "Given Word has zero character";
-        assert (MinimumSize>= 0 ):"negative size number";
+        assert (minimumSize >= 0) : "negative size number";
 
-        int MinimumWordSizetoFindaSubString = MinimumSize + 3;
-        if( givenWord.length() < MinimumWordSizetoFindaSubString ) {
+        ArrayList<String> nonDigitSequences = new ArrayList<>();
+        int minimumWordSizetoFindaSubString = minimumSize + 3;
+
+        if (noSubArrayFound(givenWord, minimumWordSizetoFindaSubString)) {
             System.out.print("no sub array found");
-            return null;
+            return nonDigitSequences;
         }
 
-        ArrayList<String> NonDigitSequences  = new ArrayList<String>();
-        boolean firstNumberFound = false;
-        int FirstNumberPlace = 0;
-        final int StartingPoint = 0;
-        final int EndingPoint = givenWord.length();
+        boolean isFirstNumberFound = false;
+        int firstNumberPlace = 0;
+        final int startingPoint = 0;
+        final int endingPoint = givenWord.length();
 
-        for( int StringIndex = StartingPoint; StringIndex < EndingPoint; StringIndex++) {
-            char charread = givenWord.charAt( StringIndex);
-            if( isNumeric( charread )) {
-                if( firstNumberFound == false ) {
-                    firstNumberFound = true;
-                    FirstNumberPlace = StringIndex;
-
-                }
-                else {
-                    char leftcharacter =givenWord.charAt( FirstNumberPlace );
-                    char rightcharacter = givenWord.charAt( StringIndex );
-
-                    if( CompareDigits( leftcharacter , rightcharacter ) ) {
-
-                        String foundString = CopyString( givenWord, FirstNumberPlace,
-                                StringIndex );
-
-                        if( foundString.length() > MinimumSize ) {
-                            NonDigitSequences.add( foundString );
-                        }
-
-                    }
-                    FirstNumberPlace = StringIndex;
-                }
+        for (int stringIndex = startingPoint; stringIndex < endingPoint; stringIndex++) {
+            char charread = givenWord.charAt(stringIndex);
+            if (!isNumeric(charread)) {
+                continue;
             }
+            if (isFirstNumberFound == false) {
+                isFirstNumberFound = true;
+                firstNumberPlace = stringIndex;
+            } else {
+                char leftcharacter = givenWord.charAt(firstNumberPlace);
+                char rightcharacter = givenWord.charAt(stringIndex);
+
+                if (CompareDigits(leftcharacter, rightcharacter)) {
+
+                    String foundString = CopyString(givenWord, firstNumberPlace,
+                            stringIndex);
+
+                    if (foundString.length() > minimumSize) {
+                        nonDigitSequences.add(foundString);
+                    }
+
+                }
+                firstNumberPlace = stringIndex;
+            }
+
         }
 
-        assert ( NonDigitSequences != null ): "Null SubString Returned";
+        assert (nonDigitSequences != null) : "Null SubString Returned";
 
 
-        return NonDigitSequences;
+        return nonDigitSequences;
+    }
+
+    private static boolean noSubArrayFound(String givenWord, int minimumWordSizetoFindaSubString) {
+        return givenWord.length() < minimumWordSizetoFindaSubString;
     }
 
 
-    private static boolean isNumeric( Character givencharacter ) {
-        assert ( givencharacter!=null ) : " NULL character error";
+    private static boolean isNumeric(Character givencharacter) {
+        assert (givencharacter != null) : " NULL character error";
 
-        if( Character.isDigit( givencharacter )) {
+        if (Character.isDigit(givencharacter)) {
             return true;
 
-        }
-        else {
+        } else {
             return false;
         }
 
     }
 
 
-    private static boolean CompareDigits( char leftcharacter, char rightcharacter ) {
+    private static boolean CompareDigits(char leftcharacter, char rightcharacter) {
 
-        if( leftcharacter >= rightcharacter ) {
+        if (leftcharacter >= rightcharacter) {
             return false;
-        }
-        else {
+        } else {
             return true;
         }
 
     }
 
 
-    private static String CopyString( String given, int leftplace, int rightplace ) {
-        assert ( given!=null ) : " NULL String error";
+    private static String CopyString(String given, int leftplace, int rightplace) {
+        assert (given != null) : " NULL String error";
 
-        String Copied="";
+        String Copied = "";
 
-        for( int k=leftplace+1; k < rightplace; k++ ) {
+        for (int k = leftplace + 1; k < rightplace; k++) {
             Copied = Copied + given.charAt(k);
         }
 
 
-        assert ( Copied != null ):" NULL Word Found returned";
+        assert (Copied != null) : " NULL Word Found returned";
 
         return Copied;
     }

@@ -1,9 +1,9 @@
 package ro.esolutions.scleancode.scleancode.example2.domain;
 
 public class Session {
-    private String title;
-    private String description;
-    private boolean approved;
+    String title;
+    String description;
+    boolean approved;
 
     public Session(String title, String description) {
         this.title = title;

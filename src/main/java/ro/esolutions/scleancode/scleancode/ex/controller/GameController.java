@@ -1,9 +1,9 @@
-package ro.esolutions.scleancode.scleancode.exercise1.controller;
+package ro.esolutions.scleancode.scleancode.ex.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import ro.esolutions.scleancode.scleancode.exercise1.db.Game;
-import ro.esolutions.scleancode.scleancode.exercise1.db.GameRepository;
+import ro.esolutions.scleancode.scleancode.ex.db.Game;
+import ro.esolutions.scleancode.scleancode.ex.db.GameRepository;
 
 import java.util.List;
 

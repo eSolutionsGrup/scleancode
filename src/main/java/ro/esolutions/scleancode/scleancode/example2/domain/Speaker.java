@@ -20,11 +20,18 @@ public class Speaker {
     private List<Session> sessions;
     public int RegistrationFee;
 
-    public void ValidateExceptions()
-    {
-        if (this.firstName.isEmpty()) {throw new IllegalArgumentException("First Name is required");}
-        if (this.lastName.isEmpty()) {throw new IllegalArgumentException("Last name is required");}
-        if (this.email.isEmpty()) {throw new IllegalArgumentException("Email is required");}
+    public void ValidateExceptions() {
+        if (this.firstName.isEmpty()) {
+            throw new IllegalArgumentException("First Name is required");
+        }
+        if (this.lastName.isEmpty()) {
+            throw new IllegalArgumentException("Last name is required");
+        }
+
+        if (this.email.isEmpty()) {
+            throw new IllegalArgumentException("Email is required");
+        }
+
     }
 
     private void validateFeatures() throws Exception {
@@ -104,27 +111,18 @@ public class Speaker {
     }
 
 
-    public int getRegistrationFee(int /*?*/ Experience)
-    {
+    public int getRegistrationFee(int /*?*/ Experience) {
         int RegistrationFee = 0;
-        if (Experience <= 0)
-        {
+        if (Experience <= 0) {
             RegistrationFee = 500;
         }
-        if (Experience >= 2 && Experience <= 3)
-        {
+        if (Experience >= 2 && Experience <= 3) {
             RegistrationFee = 250;
-        }
-        else if (Experience >= 4 && Experience <= 5)
-        {
+        } else if (Experience >= 4 && Experience <= 5) {
             RegistrationFee = 100;
-        }
-        else if (Experience >= 6 && Experience <= 9)
-        {
+        } else if (Experience >= 6 && Experience <= 9) {
             RegistrationFee = 50;
-        }
-        else
-        {
+        } else {
             RegistrationFee = 0;
         }
         return RegistrationFee;

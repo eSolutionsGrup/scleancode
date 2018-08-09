@@ -1,4 +1,4 @@
-package ro.esolutions.scleancode.scleancode.exercise1.db;
+package ro.esolutions.scleancode.scleancode.ex.db;
 
 import org.springframework.stereotype.Component;
 

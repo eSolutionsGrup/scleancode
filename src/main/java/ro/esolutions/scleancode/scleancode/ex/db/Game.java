@@ -1,4 +1,4 @@
-package ro.esolutions.scleancode.scleancode.exercise1.db;
+package ro.esolutions.scleancode.scleancode.ex.db;
 
 public class Game {
     public Game(String name, String version, String company, String description) {

@@ -1,7 +1,7 @@
-package ro.esolutions.scleancode.scleancode.exercise1.controller;
+package ro.esolutions.scleancode.scleancode.ex.controller;
 
 import org.springframework.web.bind.annotation.*;
-import ro.esolutions.scleancode.scleancode.exercise1.db.Account;
+import ro.esolutions.scleancode.scleancode.ex.db.Account;
 
 import java.util.List;
 
