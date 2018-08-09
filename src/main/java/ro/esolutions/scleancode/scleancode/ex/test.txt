@@ -1,0 +1,5 @@
+- de implementat API call-urile GET/POST/DELETE din account
+
+- de implementat API call-urile GET/POST/DELETE din game
+
+- de facut un endpoint care sa expuna pe GET o lista de ACCOUNT cu Jocuri asignate ( minim 2 jocuri pentru un account)

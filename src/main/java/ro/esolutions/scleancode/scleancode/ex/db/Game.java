@@ -1,17 +1,17 @@
 package ro.esolutions.scleancode.scleancode.ex.db;
 
 public class Game {
+    private String name;
+    private String version;
+    private String company;
+    private String description;
+
     public Game(String name, String version, String company, String description) {
         this.name = name;
         this.version = version;
         this.company = company;
         this.description = description;
     }
-
-    private String name;
-    private String version;
-    private String company;
-    private String description;
 
     public String getName() {
         return name;
